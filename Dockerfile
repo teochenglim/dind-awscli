@@ -7,3 +7,8 @@ RUN \
 	pip3 install awscli docker-compose && \
 	apk --purge -v del py3-pip && \
 	rm /var/cache/apk/*
+RUN cat << EOF > ~/.aws/config
+[default]
+region = ap-southeast-1
+output = json
+EOF
